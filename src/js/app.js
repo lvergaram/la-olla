@@ -3,7 +3,7 @@ let palabrasSacadas = [];
 
 function actualizarContador() {
     let contadorPalabras = document.getElementById('contadorPalabras');
-    contadorPalabras.textContent = palabras.length + ' palabras';
+    contadorPalabras.textContent = palabras.length ===0? "olla vacia!🍲" :palabras.length + ' papeles en la olla🍲';
 }
 
 function actualizarLista() {
@@ -24,7 +24,7 @@ function actualizarLista() {
 }
 
 function agregarPalabra() {
-    let nuevaPalabra = prompt('Ingrese una nueva palabra:');
+    let nuevaPalabra = prompt('Ingrese tu papel:');
     if (nuevaPalabra !== null && nuevaPalabra.trim() !== '') {
         palabras.push(nuevaPalabra.trim());
         actualizarLista();
@@ -33,7 +33,7 @@ function agregarPalabra() {
 
 function sacarPalabra() {
     if (palabras.length === 0) {
-        alert('La bolsa de palabras está vacía.');
+        alert('La bolsa de papeles está vacía.');
         return;
     }
     let indiceAleatorio = Math.floor(Math.random() * palabras.length);
@@ -65,15 +65,15 @@ function actualizarPalabrasSacadas() {
 
     // Actualizar contador de palabras sacadas
     let contadorPalabrasSacadas = document.getElementById('contadorPalabrasSacadas');
-    contadorPalabrasSacadas.textContent = palabrasSacadas.length + ' palabras sacadas';
+    contadorPalabrasSacadas.textContent = palabrasSacadas.length + ' papeles sacados';
 }
 
 function eliminarTodasLasPalabras() {
     if (palabras.length === 0) {
-        alert('No hay palabras que eliminar.');
+        alert('No hay papeles que eliminar.');
         return;
     }
-    let confirmacion = confirm('¿Está seguro que desea eliminar todas las palabras?');
+    let confirmacion = confirm('¿Está seguro que desea eliminar todos los papeles?');
     if (confirmacion) {
         palabras = [];
         actualizarLista();
@@ -82,7 +82,7 @@ function eliminarTodasLasPalabras() {
 
 function guardarUltimaPalabra() {
     if (palabrasSacadas.length === 0) {
-        alert('No hay palabras sacadas para guardar.');
+        alert('No hay papeles sacados para guardar.');
         return;
     }
     let ultimaPalabra = palabrasSacadas.pop();
@@ -94,7 +94,7 @@ function guardarUltimaPalabra() {
 
 function revolverBolsa() {
     if (palabrasSacadas.length === 0) {
-        alert('No hay palabras sacadas para revolver la bolsa.');
+        alert('No hay papeles sacados para revolver la bolsa.');
         return;
     }
     palabras = palabras.concat(palabrasSacadas);

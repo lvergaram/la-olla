@@ -1,5 +1,16 @@
+.body,#app-container{
+    height: 100vh;
 
+}
 .list-group-item {
     color: transparent;
     /* text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); */
+}
+
+#palabra-sacada{
+    min-height: 20vh;
+}
+
+#btn-sacarPapel{
+    min-height: 10vh;
 }
