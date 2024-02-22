@@ -7,8 +7,9 @@
     /* text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); */
 }
 
-#palabra-sacada{
+#ultimaPalabraGuardada{
     min-height: 20vh;
+    font-size: 2rem;
 }
 
 #btn-sacarPapel{
