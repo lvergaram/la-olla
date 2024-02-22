@@ -116,3 +116,17 @@ function revolverBolsa() {
 // Inicializar la lista al cargar la página
 actualizarLista();
 actualizarPalabrasSacadas();
+
+
+
+// PREVENSION DE RECARGA
+window.addEventListener('beforeunload', function (event) {
+    // Solo mostrar la advertencia si hay palabras en las listas
+    if (palabras.length > 0 || palabrasSacadas.length > 0) {
+        // Cancelar el evento de cierre para mostrar el mensaje de confirmación
+        event.preventDefault();
+        // Mensaje que se mostrará al usuario
+        event.returnValue = '¿Estás seguro de que deseas abandonar la página? ' +
+                            'Podrías perder las palabras que has ingresado.';
+    }
+});
